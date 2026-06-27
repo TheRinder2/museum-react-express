@@ -1,0 +1,86 @@
+.edit-hall-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 2px solid #1abc9c;
+  border-radius: 12px;
+  background-color: #34495e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* .details {
+  background-color: #34495e;
+  color: #ecf0f1;
+} */
+
+.details-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.details-header h2 {
+  font-size: 26px;
+  margin: 0;
+  color: #1abc9c;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+  padding: 12px;
+  margin-top: 5px;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+.submit-button {
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #16a085;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #bdc3c7;
+}
+
+.hall-title {
+  color: #ecf0f1;
+}
