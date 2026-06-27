@@ -1,162 +1,96 @@
-# Museum — персональный pet-проект
+# Museum React Express
 
-Проект "Museum" — полнофункциональное демонстрационное веб-приложение (React + Express + MongoDB), представляющее виртуальную систему управления выставками, экспонатами и выставочными залами. Этот репозиторий — аккуратно оформленный pet‑проект, демонстрирующий полный стек разработки, организованный подход к маршрутам, контроллерам и моделям, а также простую аутентификацию.
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react) ![Express](https://img.shields.io/badge/Express-4-000000?logo=express) ![MongoDB](https://img.shields.io/badge/MongoDB-6.0-47A248?logo=mongodb) ![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=node.js)
 
-Цель проекта
-- Показать навыки full‑stack разработки на Node.js/Express и React.
-- Продемонстрировать работу с MongoDB (через Mongoose), маршрутизацию, REST API и простую сессию/аутентификацию.
-- Быстрая развёртка для демонстрации на GitHub и локальной машине.
+A full-stack portfolio project for managing museum exhibitions, exhibits, and halls. The application combines a React frontend with an Express REST API and MongoDB persistence.
 
-Ключевые особенности
-- Полноценный REST API для `Exhibitions`, `Exhibits` и `Halls`.
-- React SPA с маршрутизацией (React Router), компонентной структурой и минимальным UI.
-- Модели данных с валидацией на уровне Mongoose.
-- Сессии и задел под аутентификацию (Passport.js, Google OAuth конфигурация есть в проекте).
+## Overview
 
-Технологии
-- Frontend: React, react‑scripts
+- React client with routing and reusable UI components;
+- Express backend with structured REST endpoints;
+- MongoDB storage through Mongoose models;
+- Authentication foundation with Passport.js and support for OAuth integration;
+- Clear separation of routes, controllers, and models for maintainability.
+
+## Tech stack
+
+- Frontend: React, React Router
 - Backend: Node.js, Express
-- БД: MongoDB (Mongoose)
-- Аутентификация: Passport.js (Google OAuth готов к настройке)
+- Database: MongoDB, Mongoose
+- Auth: Passport.js
 
-Структура репозитория (основное)
-- `client/` — React приложение
-- `server/` — Express сервер, маршруты, контроллеры и модели
-- `server/models` — схемы Mongoose
-- `server/controllers` — бизнес‑логика API
-- `server/routes` — HTTP маршруты
+## Project structure
 
-Требования (Prerequisites)
-- Node.js (>=16) и npm
-- MongoDB (локально или удалённый доступ через URI)
-
-Настройка и запуск (локально)
-
-1) Клонировать репозиторий и установить зависимости:
-
-```bash
-git clone <repo-url>
-cd react-express-lab-master
-npm install
-cd client && npm install && cd ..
+```text
+client/          # React frontend
+server/          # Express backend
+  config/        # database and Passport setup
+  controllers/   # request handling logic
+  models/        # Mongoose schemas
+  routes/        # API routes
 ```
 
-2) Настроить переменные окружения для сервера (опционально создайте файл `server/.env` или укажите в системе):
+## Getting started
 
-- `MONGO_URI` — (опционально) строка подключения к MongoDB. Если не указана, будет использована `mongodb://127.0.0.1:27017/museum`.
-- При желании: Google OAuth параметры хранятся в `server/config/passport.js` — добавьте `GOOGLE_CLIENT_ID` и `GOOGLE_CLIENT_SECRET` в окружение, если хотите включить вход через Google.
-
-3) Запустить в режиме разработки (в корне проекта):
-
-# museum-react-express — Pet project (React + Express + MongoDB)
-
-![Repository size](https://img.shields.io/badge/stack-React%20%7C%20Express-blue) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
-
-Короткая презентация
---------------------
-
-**museum-react-express** — демонстрационный full‑stack pet‑проект, имитирующий систему управления выставками, экспонатами и залами. Идеально подходит для портфолио: показывает работу с REST API, серверной логикой на Express и клиентской частью на React.
-
-Сделано, чтобы легко показать навыки работодателю: чистая структура кода, разделение контроллеров/маршрутов/моделей, базовая аутентификация и готовность к развёртыванию.
-
-Оглавление
-----------
-- [Ключевые особенности](#ключевые-особенности)
-- [Технологии](#технологии)
-- [Структура проекта](#структура-проекта)
-- [Установка и запуск](#установка-и-запуск)
-- [Переменные окружения](#переменные-окружения)
-- [Полезные команды](#полезные-команды)
-- [Лицензия и вклад](#лицензия-и-вклад)
-
-Ключевые особенности
---------------------
-- Полноценный REST API для сущностей `Exhibitions`, `Exhibits`, `Halls`.
-- Клиентская SPA на React с маршрутизацией и компонентной архитектурой.
-- Схемы Mongoose с валидацией данных.
-- Сессии и задел под OAuth (Passport.js).
-
-Технологии
-----------
-- Frontend: React
-- Backend: Node.js, Express
-- БД: MongoDB (Mongoose)
-- Тесты: (минимальная заготовка)
-
-Структура проекта
------------------
-```
-client/            # React приложение
-server/            # Express сервер
-	config/          # DB, passport
-	controllers/     # логика обработки запросов
-	models/          # Mongoose схемы
-	routes/          # HTTP маршруты
-README.md
-```
-
-Установка и запуск (локально)
-----------------------------
-
-1. Клонируйте репозиторий и установите зависимости:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/TheRinder2/museum-react-express.git
 cd museum-react-express
+```
+
+2. Install dependencies:
+
+```bash
 npm install
 cd client && npm install && cd ..
 ```
 
-2. Настройте переменные окружения (опционально):
-
-Создайте файл `server/.env` или экспортируйте переменные в системе:
-
-```
-MONGO_URI=mongodb://127.0.0.1:27017/museum
-GOOGLE_CLIENT_ID=...
-GOOGLE_CLIENT_SECRET=...
-```
-
-3. Запустите проект (оба сервера):
+3. Start the application:
 
 ```bash
 npm start
 ```
 
-Если нужно только сервер или только клиент, используйте:
+### Run services separately
 
 ```bash
-# Сервер
+# server
 cd server
 npx nodemon Index.js
 
-# Клиент
+# client
 cd client
 npm start
 ```
 
-Переменные окружения
---------------------
-- `MONGO_URI` — строка подключения к MongoDB (если не указана, используется локальная база `mongodb://127.0.0.1:27017/museum`).
-- `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` — параметры для Google OAuth (опционально).
+## Environment variables
 
-Полезные команды
-----------------
+Create a `server/.env` file or export the values in your shell:
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/museum
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+## Useful commands
+
 ```bash
-# Установить зависимости
+# install dependencies
 npm install
 cd client && npm install
 
-# Запустить оба сервера
+# start both services
 npm start
 
-# Только сервер (dev)
+# start server only
 cd server && npx nodemon Index.js
 
-# Только клиент
+# start client only
 cd client && npm start
 ```
 
-Лицензия и вклад
-----------------
-Проект предоставлен как pet‑проект. По умолчанию добавлена лицензия MIT. Пулреквесты и идеи приветствуются.
+## License and contribution
+
+This repository is intended as a full-stack portfolio project. Pull requests and suggestions are welcome.
